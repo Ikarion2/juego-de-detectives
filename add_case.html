@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agregar nuevo caso</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .template-info {
+      background: var(--color-glass, rgba(20,24,34,0.55));
+      border: 1px solid var(--color-border, rgba(255,255,255,0.10));
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .template-info h3 {
+      margin: 0 0 10px;
+      color: #f5a623;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .template-info code {
+      background: rgba(255,255,255,0.08);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+    .template-info ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+    .template-info li { margin-bottom: 4px; }
+    .template-actions { margin-bottom: 12px; display: flex; gap: 8px; }
+    .template-actions button {
+      font-size: 12px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.06);
+      color: #eef1f6;
+      transition: background 0.2s;
+    }
+    .template-actions button:hover { background: rgba(255,255,255,0.12); }
+    #validationResult {
+      margin-top: 10px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      line-height: 1.5;
+      display: none;
+    }
+    #validationResult.valid {
+      display: block;
+      background: rgba(46,204,113,0.15);
+      border: 1px solid rgba(46,204,113,0.3);
+      color: #2ecc71;
+    }
+    #validationResult.invalid {
+      display: block;
+      background: rgba(231,76,60,0.15);
+      border: 1px solid rgba(231,76,60,0.3);
+      color: #e74c3c;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="page active">
+      <h2>Agregar un nuevo caso</h2>
+
+      <div class="template-info">
+        <h3>Estructura requerida (v2 — Investigacion Progresiva)</h3>
+        <p>Cada caso debe incluir:</p>
+        <ul>
+          <li><code>id</code>, <code>difficulty</code> (Alto/Experto/Hardcore), <code>title</code>, <code>description</code></li>
+          <li><code>objectives</code> — array de strings</li>
+          <li><code>characters</code> — cada uno con <code>name</code>, <code>personality</code>, <code>testimony</code>, <code>truth</code> (boolean), <code>suspicionLevel</code> (<code>"high"</code>, <code>"medium"</code> o <code>"low"</code>)</li>
+          <li><code>clues</code> — objeto con <code>phase1</code>, <code>phase2</code>, <code>phase3</code> (arrays de pistas)</li>
+          <li>Cada pista: <code>{ text, relevant, misleading, pointsTo?, contradicts? }</code></li>
+          <li><code>solution</code> — con <code>culprit</code>, <code>motive</code>, <code>method</code>, <code>consequence</code> (ruta imagen), <code>chronology</code></li>
+          <li><code>chronology</code> — array de objetos <code>{ event: "...", clueHint: "..." }</code></li>
+          <li><code>debriefQuestions</code> — array de preguntas de reflexion</li>
+        </ul>
+      </div>
+
+      <div class="template-actions">
+        <button id="loadTemplateBtn" type="button">Cargar plantilla vacia</button>
+        <button id="validateBtn" type="button">Validar JSON</button>
+      </div>
+
+      <textarea id="caseJson" style="width:100%;min-height:350px;border-radius:8px;padding:12px;font-family:monospace;font-size:12px;background:rgba(15,18,26,0.82);color:#eef1f6;border:1px solid rgba(255,255,255,0.10);"></textarea>
+
+      <div id="validationResult"></div>
+
+      <div class="page-actions" style="margin-top:10px;display:flex;justify-content:center;gap:12px;">
+        <button id="backBtn" class="secondary-btn" type="button">Cancelar</button>
+        <button id="saveBtn" class="primary-btn" type="button">Guardar caso</button>
+      </div>
+    </div>
+  </div>
+  <script src="cases.js"></script>
+  <script src="add_case.js"></script>
+</body>
+</html>

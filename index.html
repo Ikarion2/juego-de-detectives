@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Cambia-el-Chip: Juego de Detectives — Liceo Comercial Jorge Alessandri Rodríguez, Rancagua">
+  <title>Cambia‑el‑Chip: Juego de Detectives</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Botón de música fijo -->
+  <button id="bgmToggle" title="Silenciar/activar música">🔈 Música</button>
+
+  <!-- Contenedor principal de la aplicación -->
+  <div id="app">
+    <!-- PORTADA -->
+    <section id="menuPage" class="page page--home active">
+      <img src="assets/logo_jar.png" alt="Liceo Comercial JAR" class="home-logo">
+      <h1>Cambia el Chip: Juego de Detectives</h1>
+
+      <div class="home-hero">
+        <img src="assets/home_magnifying.png" alt="Imagen temática" onerror="this.style.display='none'">
+        <div class="home-hero__overlay"></div>
+      </div>
+
+      <!-- Controles -->
+      <div class="controls">
+        <div>
+          <label for="difficulty">Dificultad:</label>
+          <select id="difficulty">
+            <option value="Alto">Alto</option>
+            <option value="Experto">Experto</option>
+            <option value="Hardcore">Hardcore</option>
+          </select>
+        </div>
+        <div>
+          <label for="caseSelect">Caso:</label>
+          <select id="caseSelect">
+            <option value="">Cargando casos…</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="home-actions">
+        <button id="startBtn" class="btn">Comenzar</button>
+      </div>
+
+      <footer class="note">Liceo Comercial Jorge Alessandri Rodríguez – Rancagua</footer>
+    </section>
+
+    <!-- Página de objetivos del caso -->
+    <div id="objectivesPage" class="page">
+      <h2 id="caseTitle"></h2>
+      <p id="caseDescription"></p>
+      <h3>Objetivos del caso</h3>
+      <ul id="objectivesList"></ul>
+      <div class="page-actions">
+        <button id="startInvestigationBtn" class="primary-btn">Iniciar investigación</button>
+      </div>
+    </div>
+
+    <!-- FASE 1: Primera Impresion -->
+    <div id="phase1Page" class="page">
+      <div class="phase-indicator">
+        <div class="phase-step active">Fase 1</div>
+        <div class="phase-step">Fase 2</div>
+        <div class="phase-step">Fase 3</div>
+        <div class="phase-step">Cronologia</div>
+      </div>
+      <h2 id="phase1CaseTitle"></h2>
+      <div id="phase1Container"></div>
+    </div>
+
+    <!-- FASE 2: El Giro -->
+    <div id="phase2Page" class="page">
+      <div class="phase-indicator">
+        <div class="phase-step completed">Fase 1</div>
+        <div class="phase-step active">Fase 2</div>
+        <div class="phase-step">Fase 3</div>
+        <div class="phase-step">Cronologia</div>
+      </div>
+      <h2 id="phase2CaseTitle"></h2>
+      <div id="phase2Container"></div>
+    </div>
+
+    <!-- FASE 3: Acusacion Final -->
+    <div id="phase3Page" class="page">
+      <div class="phase-indicator">
+        <div class="phase-step completed">Fase 1</div>
+        <div class="phase-step completed">Fase 2</div>
+        <div class="phase-step active">Fase 3</div>
+        <div class="phase-step">Cronologia</div>
+      </div>
+      <h2 id="phase3CaseTitle"></h2>
+      <div id="phase3Container"></div>
+    </div>
+
+    <!-- Página de cronología -->
+    <div id="timelinePage" class="page">
+      <div class="phase-indicator">
+        <div class="phase-step completed">Fase 1</div>
+        <div class="phase-step completed">Fase 2</div>
+        <div class="phase-step completed">Fase 3</div>
+        <div class="phase-step active">Cronologia</div>
+      </div>
+      <h2 id="timelineCaseTitle"></h2>
+      <p>Arrastra los eventos para ordenarlos según creas que ocurrieron. Luego, comprueba si la cronología es correcta.
+      </p>
+      <ul id="timelineList"></ul>
+      <div class="page-actions">
+        <button id="timelineBackBtn" class="secondary-btn">Volver a acusación</button>
+        <button id="checkTimelineBtn" class="primary-btn">Comprobar orden</button>
+        <button id="timelineNextBtn" class="primary-btn" disabled>Siguiente</button>
+      </div>
+      <p id="timelineResult" class="timeline-result"></p>
+    </div>
+
+    <!-- Página de solución -->
+    <div id="solutionPage" class="page">
+      <div id="journeyPanel"></div>
+      <h2>Solución del caso</h2>
+      <p><strong>Culpable:</strong> <span id="solutionCulpable"></span></p>
+      <p><strong>Motivo:</strong> <span id="solutionMotivo"></span></p>
+      <p><strong>Modo de actuar:</strong> <span id="solutionMetodo"></span></p>
+      <h3>Cronología</h3>
+      <ul id="solutionCronologia"></ul>
+      <img id="solutionImage" src="" alt="Consecuencia">
+      <h3>Preguntas de reflexión</h3>
+      <ul id="debriefQuestions"></ul>
+      <div class="page-actions">
+        <button id="evaluationBtn" class="primary-btn">Evaluación docente</button>
+        <button id="solutionBackBtn" class="secondary-btn">Volver al menú</button>
+      </div>
+    </div>
+
+    <!-- Página de evaluación docente -->
+    <div id="evaluationPage" class="page">
+      <h2>Evaluacion Docente</h2>
+
+      <!-- Resumen automatico del recorrido del alumno -->
+      <div id="evalSummary" class="eval-summary">
+        <h3>Resumen del juego</h3>
+        <div class="eval-summary__grid">
+          <div class="eval-summary__item">
+            <span class="eval-summary__label">Caso</span>
+            <span id="evalSumCase" class="eval-summary__value">—</span>
+          </div>
+          <div class="eval-summary__item">
+            <span class="eval-summary__label">Fase 1</span>
+            <span id="evalSumPhase1" class="eval-summary__value">—</span>
+          </div>
+          <div class="eval-summary__item">
+            <span class="eval-summary__label">Fase 2</span>
+            <span id="evalSumPhase2" class="eval-summary__value">—</span>
+          </div>
+          <div class="eval-summary__item">
+            <span class="eval-summary__label">Fase 3</span>
+            <span id="evalSumPhase3" class="eval-summary__value">—</span>
+          </div>
+          <div class="eval-summary__item">
+            <span class="eval-summary__label">Cambios</span>
+            <span id="evalSumChanges" class="eval-summary__value">—</span>
+          </div>
+          <div class="eval-summary__item">
+            <span class="eval-summary__label">Puntaje total</span>
+            <span id="evalSumScore" class="eval-summary__value">—</span>
+          </div>
+        </div>
+
+        <!-- Justificaciones del alumno (para revision docente) -->
+        <details class="eval-reasoning">
+          <summary>Ver justificaciones del alumno</summary>
+          <div id="evalReasonings" class="eval-reasoning__content"></div>
+        </details>
+      </div>
+
+      <form id="evaluationForm">
+        <div>
+          <label for="evalNames">Nombres de participantes</label>
+          <input type="text" id="evalNames">
+        </div>
+        <div>
+          <label for="evalCourse">Curso / Seccion</label>
+          <input type="text" id="evalCourse">
+        </div>
+
+        <!-- Rubrica docente -->
+        <div class="eval-rubric">
+          <h3>Rubrica docente</h3>
+          <div>
+            <label for="evalAnalysis">Capacidad de analisis de evidencia</label>
+            <select id="evalAnalysis">
+              <option value="">— Seleccione —</option>
+              <option value="1">1 – Insuficiente</option>
+              <option value="2">2 – Basico</option>
+              <option value="3">3 – Suficiente</option>
+              <option value="4">4 – Bueno</option>
+              <option value="5">5 – Excelente</option>
+            </select>
+          </div>
+          <div>
+            <label for="evalTeamwork">Trabajo en equipo</label>
+            <select id="evalTeamwork">
+              <option value="">— Seleccione —</option>
+              <option value="1">1 – Insuficiente</option>
+              <option value="2">2 – Basico</option>
+              <option value="3">3 – Suficiente</option>
+              <option value="4">4 – Bueno</option>
+              <option value="5">5 – Excelente</option>
+            </select>
+          </div>
+          <div>
+            <label for="evalFlex">Observaciones sobre flexibilidad mental</label>
+            <textarea id="evalFlex" rows="3" placeholder="Como reacciono el alumno al enfrentar evidencia contradictoria?"></textarea>
+          </div>
+        </div>
+
+        <div>
+          <label for="evalComments">Observaciones generales del docente</label>
+          <textarea id="evalComments" rows="3"></textarea>
+        </div>
+
+        <div class="page-actions">
+          <button type="button" id="evalBackBtn" class="secondary-btn">Volver a solucion</button>
+          <button type="submit" id="evalSubmitBtn" class="primary-btn">Descargar evaluacion (CSV)</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Reproductor de música -->
+  <audio id="bgm" preload="auto" loop></audio>
+
+  <!-- Scripts -->
+  <script src="cases.js"></script>
+  <script src="game_script.js"></script>
+  <script src="custom.js"></script>
+</body>
+
+</html>
