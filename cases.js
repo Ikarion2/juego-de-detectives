@@ -3,46 +3,46 @@ const cases = [
     id: 1,
     difficulty: 'Alto',
     title: 'Incendio en el laboratorio',
-    description: 'Viernes por la tarde, al terminar la jornada, se percibe un olor persistente a solvente en el pasillo del laboratorio. Minutos despues, un foco de fuego se inicia sobre la mesa de trabajo principal y es extinguido rapidamente, dejando danos en equipo y materiales. Antes del cierre hubo clase de quimica donde se utilizaron solventes y mecheros. Tras el ultimo timbre, el flujo de personas disminuye, pero quedaron rastros de manipulacion posterior y senales contradictorias. Se logra aislar a las personas que se encontraban cerca del laboratorio en la hora en que ocurrio el incidente y se procede a comparar sus testimonios con las evidencias fisicas para reconstruir una cronologia fiable de la ocurrencia de los hechos.',
+    description: 'Viernes por la tarde, al terminar la jornada, se percibe un olor persistente a solvente en el pasillo del laboratorio. Minutos después, un foco de fuego se inicia sobre la mesa de trabajo principal y es extinguido rápidamente, dejando daños en equipo y materiales. Antes del cierre hubo clase de química donde se utilizaron solventes y mecheros. Tras el último timbre, el flujo de personas disminuye, pero quedaron rastros de manipulación posterior y señales contradictorias. Se logra aislar a las personas que se encontraban cerca del laboratorio en la hora en que ocurrio el incidente y se procede a comparar sus testimonios con las evidencias físicas para reconstruir una cronología fiable de la ocurrencia de los hechos.',
     objectives: [
-      'Contrastar testimonios con evidencias fisicas y registros',
+      'Contrastar testimonios con evidencias físicas y registros',
       'Diferenciar pistas relevantes de aquellas enganosas',
-      'Armar la cronologia de los hechos ocurridos',
+      'Armar la cronología de los hechos ocurridos',
       'Evaluar la credibilidad de cada testigo'
     ],
     characters: [
       {
         name: 'Profesor Soto', image: 'assets/case1/characters/profe.png',
         personality: 'Exigente, organizado a su manera, se le ve corriendo en todo momento. Confia en su rutina y evita reconocer errores pequenos.',
-        testimony: '"Hoy hicimos practicas simples. Al terminar, deje el laboratorio en orden como siempre. Creo que los extractores ya estaban apagados desde antes; no recuerdo el estado exacto del mechero, pero yo siempre cierro todo. No vi derrames. Revise rapido porque tenia reunion en la sala de profesores. El checklist... suelo completarlo mentalmente y luego lo marco. No note nada extrano al salir."',
+        testimony: '"Hoy hicimos prácticas simples. Dejé el laboratorio ordenado, pero salí apurado por una reunión. Revisé rápido los mecheros y no recuerdo si ventilé bien. Suelo completar el checklist al final; puede que quedara pendiente una casilla."',
         truth: false,
         suspicionLevel: 'high'
       },
       {
         name: 'Estudiante Ramirez', image: 'assets/case1/characters/ramirez.png',
         personality: 'Curioso, proclive a probar cosas por el bien de la ciencia, cree que descubrir cosas nuevas es lo mas importante, no suele medir el riesgo.',
-        testimony: 'Olvide mi cuaderno y volvi un segundo. La puerta estaba entreabierta; entre, tome el cuaderno y me fui. Habia un olorcito, pero pense que era normal despues de las practicas. No toque nada, ni el mechero ni los frascos. No vi a nadie mas.',
+        testimony: 'Olvide mi cuaderno y volvi un segundo. La puerta estaba entreabierta; entre, tome el cuaderno y me fui. Habia un olorcito, pero pense que era normal después de las prácticas. No toque nada, ni el mechero ni los frascos. No vi a nadie mas.',
         truth: false,
         suspicionLevel: 'medium'
       },
       {
         name: 'Estudiante Fernandez', image: 'assets/case1/characters/fernandez.png',
         personality: 'Metodica, estudiosa, suele escribir todo en su agenda. Siempre se le ve estudiar en biblioteca, junto al laboratorio. Destaca por pasar horas leyendo sobre temas que le son de interes.',
-        testimony: 'Estuve en la biblioteca revisando guias hasta el ultimo timbre. No me acerque al laboratorio.',
+        testimony: 'Estuve en la biblioteca revisando guias hasta el último timbre. No me acerque al laboratorio.',
         truth: true,
         suspicionLevel: 'low'
       },
       {
         name: 'Guardia', image: 'assets/case1/characters/guardia.png',
-        personality: 'Confiado, tiende a normalizar ruidos menores y no prestarle atencion. Tiene un muy buen trato con los alumnos, Se le ha visto dormitando algunas veces en su horario de trabajo.',
-        testimony: 'En el pasillo escuche un clic metalico breve, como de llave o de valvula, y senti una rafaga de olor mas fuerte a alcohol cerca de la puerta del laboratorio. Supuse que venia de limpieza o fueron los gatos que mueven cosas a veces. Minutos despues avisaron del humo y me acerque. No vi quien entro o salio.',
+        personality: 'Confiado, tiende a normalizar ruidos menores y no prestarle atención. Tiene un muy buen trato con los alumnos, Se le ha visto dormitando algunas veces en su horario de trabajo.',
+        testimony: 'En el pasillo escuche un clic metalico breve, como de llave o de valvula, y senti una rafaga de olor mas fuerte a alcohol cerca de la puerta del laboratorio. Supuse que venia de limpieza o fueron los gatos que mueven cosas a veces. Minutos después avisaron del humo y me acerque. No vi quien entro o salio.',
         truth: false,
         suspicionLevel: 'low'
       },
       {
         name: 'Encargado de Enlaces', image: 'assets/case1/characters/TI.png',
         personality: 'Muy ordenado. Comunmente revisa los cierres de las puertas cuando va camino a la sala de computacion, respalda las camaras y las revisa cuando se debe investigar algo, colabora comunmente con las diversas situaciones que ocurren en la escuela.',
-        testimony: 'Venia de mi tiempo de descanso y pase a revisar las puertas del laboratorio por rutina, vi la puerta entreabierta junto al humo saliendo desde el interior de la sala. Ayude a extinguir el foco con el extintor. Pedi revisar las camaras, pero hay sectores que no funcionan por mantencion aunque el sistema conserva una alerta de apertura despues del ultimo timbre de la puerta de laboratorio.',
+        testimony: 'Volvía de descanso y, en mi revisión de rutina, vi la puerta entreabierta con humo en el interior. Ayudé a extinguir el foco con el extintor. Solicité revisar cámaras: algunos sectores están en mantención, pero sí quedó registrada una apertura después del último timbre.',
         truth: true,
         suspicionLevel: 'low'
       }
@@ -56,7 +56,7 @@ const cases = [
         { text: "Cable USB chamuscado junto a notebook antiguo sin conexion al mechero.", relevant: false, misleading: false }
       ],
       phase2: [
-        { text: "Alerta del control de acceso indica una apertura posterior al ultimo timbre.", relevant: true, misleading: false, contradicts: "Profesor Soto" },
+        { text: "Alerta del control de acceso indica una apertura posterior al último timbre.", relevant: true, misleading: false, contradicts: "Profesor Soto" },
         { text: "Mensaje en grupo de curso: 'Alguien se queda practicando hoy? Necesito repetir el montaje'.", relevant: true, misleading: false, contradicts: "Profesor Soto" },
         { text: "Llavero de copias con etiqueta descolorida hallado cerca del mueble de reactivos; registro de prestamo incompleto del mes pasado.", relevant: true, misleading: false },
         { text: "Frasco de etanol con tapa mal sellada y pequenas manchas recientes junto a la base del mechero.", relevant: true, misleading: false },
@@ -85,9 +85,9 @@ const cases = [
         motive: 'Cadena de descuidos + curiosidad fuera de protocolo.',
         method: 'Soto deja el laboratorio en condicion insegura; Ramirez reingresa con llaves, manipula cerca de solventes, enciende el mechero y trata de ocultar.',
         chronology: [
-          { event: 'Durante la ultima clase de quimica se usan solventes y mecheros.', clueHint: 'Frasco de etanol con tapa mal sellada y pequenas manchas recientes junto a la base del mechero.' },
+          { event: 'Durante la ultima clase de química se usan solventes y mecheros.', clueHint: 'Frasco de etanol con tapa mal sellada y pequenas manchas recientes junto a la base del mechero.' },
           { event: 'Un frasco de etanol queda mal sellado al finalizar la clase, lo que hace que el ambiente se sature de vapor quimico.', clueHint: 'Extractores de aire apagados y ventanas cerradas; olor a solvente mas intenso dentro que en pasillo.' },
-          { event: 'El profesor revisa rapidamente los mecheros sin percatarse de que uno queda con la llave de gas casi cerrada (flujo minimo detectable).', clueHint: 'Checklist de cierre del dia con dos casillas sin marcar: abrir ventilacion post-uso y doble revision del cierre de los mecheros.' },
+          { event: 'El profesor revisa rápidamente los mecheros sin percatarse de que uno queda con la llave de gas casi cerrada (flujo minimo detectable).', clueHint: 'Checklist de cierre del dia con dos casillas sin marcar: abrir ventilacion post-uso y doble revision del cierre de los mecheros.' },
           { event: 'Antes de salir, olvida activar los extractores; quedan apagados y las ventanas cerradas.', clueHint: 'Extractores de aire apagados y ventanas cerradas; olor a solvente mas intenso dentro que en pasillo.' },
           { event: 'El docente sale sin marcar los ultimos 2 items del checklist: ventilacion post-uso y doble revision de mecheros.', clueHint: 'Checklist de cierre del dia con dos casillas sin marcar.' },
           { event: 'Alguien reingresa al laboratorio usando copias de llaves; unas huellas humedas marcan entrada y salida hasta la mesa.', clueHint: 'Llavero de copias con etiqueta descolorida hallado cerca del mueble de reactivos.' },
@@ -95,7 +95,7 @@ const cases = [
           { event: 'Con solvente mal sellado y ventilacion apagada, se eleva la concentracion de vapor en torno a la mesa.', clueHint: 'Rastro leve de gotas desde el frasco de etanol hacia el borde de la mesa, indicando uso posterior a la limpieza y cierre.' },
           { event: 'Se produce ignicion en la mesa principal, dejando un circulo de quemado y marcas de llama.', clueHint: 'Circulo de quemado en la mesa principal alineado con marcas de llama.' },
           { event: 'Quien reingreso intenta ocultar el incidente: usa un pano con alcohol y descarta guantes con hollin en residuos generales.', clueHint: 'Guantes de nitrilo con leve hollin depositados en contenedor de residuos generales (no en residuo quimico).' },
-          { event: 'Se percibe un clic metalico y el olor a alcohol aumenta en el umbral del laboratorio.', clueHint: 'Alerta del control de acceso indica una apertura posterior al ultimo timbre.' },
+          { event: 'Se percibe un clic metalico y el olor a alcohol aumenta en el umbral del laboratorio.', clueHint: 'Alerta del control de acceso indica una apertura posterior al último timbre.' },
           { event: 'El encargado de TI detecta la puerta entreabierta, colabora en la extincion y solicita respaldo de camaras.', clueHint: 'Huella de zapato con borde humedo que entra y sale (dos direcciones) desde el umbral hacia la mesa y de vuelta.' }
         ],
         consequence: 'assets/case1/conclusion/final.png'
@@ -113,8 +113,8 @@ const cases = [
     id: 2,
     difficulty: 'Experto',
     title: 'Robo en el salon de computacion',
-    description: 'En un intervalo breve, desaparece una laptop del salon de computacion. Coinciden transito de estudiantes y la visita de un proveedor en mantencion. El mobiliario sugiere prisa mas que fuerza: nada esta forzado, pero hay senales de manipulacion apresurada. Varios testigos mezclan recuerdos de distintos momentos; una gorra roja capta miradas y sesga la atencion. La tarea es cruzar testimonios con evidencias fisicas para reconstruir la secuencia real de lo ocurrido.',
-    objectives: ['Analizar evidencias fisicas', 'Evaluar coartadas y motivos', 'Reconstruir que ocurrio'],
+    description: 'En un intervalo breve, desaparece una laptop del salon de computacion. Coinciden transito de estudiantes y la visita de un proveedor en mantencion. El mobiliario sugiere prisa mas que fuerza: nada esta forzado, pero hay señales de manipulación apresurada. Varios testigos mezclan recuerdos de distintos momentos; una gorra roja capta miradas y sesga la atención. La tarea es cruzar testimonios con evidencias físicas para reconstruir la secuencia real de lo ocurrido.',
+    objectives: ['Analizar evidencias físicas', 'Evaluar coartadas y motivos', 'Reconstruir que ocurrio'],
     characters: [
       {
         name: 'Jefe de TI', image: 'assets/case2/characters/1.png',
@@ -154,7 +154,7 @@ const cases = [
     ],
     clues: {
       phase1: [
-        { text: "Gorra de beisbol roja encontrada sobre un escritorio, sin senales de uso reciente (polvo fino en la visera).", relevant: true, misleading: true, pointsTo: "Proveedor" },
+        { text: "Gorra de béisbol roja encontrada sobre un escritorio, sin señales de uso reciente (polvo fino en la visera).", relevant: true, misleading: true, pointsTo: "Proveedor" },
         { text: "Factura de mantenimiento sin firmar (documento en blanco, sin correlacion temporal con el retiro del equipo).", relevant: false, misleading: true, pointsTo: "Proveedor" },
         { text: "Caja vacia de equipo nuevo en la papelera general (modelo distinto a la laptop sustraida).", relevant: false, misleading: true, pointsTo: "Jefe de TI" },
         { text: "Cinta adhesiva con pelusas adheridas, sin tension ni restos de fibras del equipo faltante.", relevant: false, misleading: false },
@@ -163,7 +163,7 @@ const cases = [
       phase2: [
         { text: "Armario de red entreabierto; marcas recientes en el pestillo indican cierre incompleto.", relevant: true, misleading: false, contradicts: "Proveedor" },
         { text: "Cable de red con clip del conector partido, colgando del puesto donde falto la laptop.", relevant: true, misleading: false, contradicts: "Proveedor" },
-        { text: "Registro del switch indica caida del puerto del puesto afectado posterior al ultimo timbre.", relevant: true, misleading: false, contradicts: "Proveedor" },
+        { text: "Registro del switch indica caida del puerto del puesto afectado posterior al último timbre.", relevant: true, misleading: false, contradicts: "Proveedor" },
         { text: "Huella de zapato con barro junto a la puerta, el patron apunta hacia la salida.", relevant: true, misleading: false },
         { text: "Pano con leve olor a limpiador de pantalla, sin huellas visibles de humedad reciente.", relevant: false, misleading: false }
       ],
@@ -182,15 +182,15 @@ const cases = [
       {
         culprit: 'Estudiante Fernando',
         motive: 'Obtener dinero rapido revendiendo la laptop.',
-        method: 'Aprovecha la ventana breve cuando el Jefe de TI se ausenta y el armario queda entreabierto tras la intervencion del proveedor (contexto de cables y movimiento legitimado). Se acerca al puesto, libera el anclaje aflojando el tornillo (micro-limaduras en la microfibra), desconecta el equipo con prisa rompiendo el clip del RJ-45 (puerto del switch cae posterior al ultimo timbre), desliza la laptop hacia si (marca de goma en el borde), la oculta bajo la chaqueta y sale dejando una huella con barro. La gorra roja dirige la atencion del guardia y sesga testimonios; una gorra con polvo aparece luego en un escritorio, confundiendose con la prenda observada.',
+        method: 'Aprovecha la ventana breve cuando el Jefe de TI se ausenta y el armario queda entreabierto tras la intervencion del proveedor (contexto de cables y movimiento legitimado). Se acerca al puesto, libera el anclaje aflojando el tornillo (micro-limaduras en la microfibra), desconecta el equipo con prisa rompiendo el clip del RJ-45 (puerto del switch cae posterior al último timbre), desliza la laptop hacia si (marca de goma en el borde), la oculta bajo la chaqueta y sale dejando una huella con barro. La gorra roja dirige la atención del guardia y sesga testimonios; una gorra con polvo aparece luego en un escritorio, confundiendose con la prenda observada.',
         chronology: [
           { event: "Breve ventana: Jefe de TI se ausenta; proveedor ha manipulado cables y el armario queda entreabierto (contexto).", clueHint: "Armario de red entreabierto; marcas recientes en el pestillo indican cierre incompleto." },
-          { event: "Fernando entra con coartada del cargador y se dirige al puesto especifico.", clueHint: "Registro del switch indica caida del puerto del puesto afectado posterior al ultimo timbre." },
+          { event: "Fernando entra con coartada del cargador y se dirige al puesto especifico.", clueHint: "Registro del switch indica caida del puerto del puesto afectado posterior al último timbre." },
           { event: "Afloja el tornillo del anclaje; quedan limaduras en la microfibra.", clueHint: "Toalla de microfibra con limaduras metalicas finas y polvo de tornillo en una esquina." },
-          { event: "Desconecta con prisa y rompe el clip del RJ-45; el puerto del switch cae posterior al ultimo timbre.", clueHint: "Cable de red con clip del conector partido, colgando del puesto donde falto la laptop." },
+          { event: "Desconecta con prisa y rompe el clip del RJ-45; el puerto del switch cae posterior al último timbre.", clueHint: "Cable de red con clip del conector partido, colgando del puesto donde falto la laptop." },
           { event: "Desliza la laptop (marca de goma) y la oculta bajo la chaqueta.", clueHint: "Rastro leve de goma en el borde del escritorio (marca de deslizamiento del equipo hacia el pasillo)." },
           { event: "Sale rapido, dejando una huella con barro junto a la puerta.", clueHint: "Huella de zapato con barro junto a la puerta, el patron apunta hacia la salida." },
-          { event: "La atencion del guardia se fija en una gorra roja en movimiento; posteriormente se halla una gorra con polvo en un escritorio (sesgo).", clueHint: "Gorra de beisbol roja encontrada sobre un escritorio, sin senales de uso reciente (polvo fino en la visera)." },
+          { event: "La atención del guardia se fija en una gorra roja en movimiento; posteriormente se halla una gorra con polvo en un escritorio (sesgo).", clueHint: "Gorra de béisbol roja encontrada sobre un escritorio, sin señales de uso reciente (polvo fino en la visera)." },
           { event: "Aparece en el chat estudiantil una oferta de 'equipo casi nuevo' compatible con la laptop sustraida.", clueHint: "Mensaje en chat estudiantil ofreciendo equipo casi nuevo describiendo especificaciones que coinciden con la laptop faltante." }
         ],
         consequence: 'assets/case2/conclusion/1.png'
@@ -200,28 +200,28 @@ const cases = [
       "Elige cuatro pistas que, conectadas, explican el retiro fisico de la laptop desde el puesto afectado.",
       "Marca dos pistas que parecen importantes pero no sostienen la cadena causal del robo (ruido) y justifica por que.",
       "Cita un elemento material que refuerza o debilita la version del Proveedor y otro que refuerza o debilita la del Jefe de TI.",
-      "Como opero el sesgo de atencion con la 'gorra roja'? Relacionalo con una pista fisica concreta dentro del salon.",
-      "Relaciona un testimonio con el momento en que el puerto del puesto afectado cae en el switch (posterior al ultimo timbre) y explica su importancia."
+      "Como opero el sesgo de atención con la 'gorra roja'? Relacionalo con una pista física concreta dentro del salon.",
+      "Relaciona un testimonio con el momento en que el puerto del puesto afectado cae en el switch (posterior al último timbre) y explica su importancia."
     ]
   },
 
   {
     id: 3,
-    difficulty: 'Hardcore',
+    difficulty: 'Avanzado',
     title: 'Sabotaje en la feria de ciencias',
-    description: 'Durante el montaje de la feria, el proyecto favorito sufre un dano subito en medio de un lugar con transito constante. Herramientas de uso comun estan accesibles y la supervision es intermitente debido a multiples frentes de coordinacion. El mobiliario no muestra fuerza bruta: las senales apuntan a manipulacion rapida y localizada. La presion competitiva y la fatiga generan percepciones contradictorias; una nota intimidante aparece y complica la interpretacion. La tarea es cruzar testimonios con evidencia fisica para distinguir accidente de intervencion intencional y reconstruir la secuencia real.',
+    description: 'Durante el montaje de la feria, el proyecto favorito sufre un dano subito en medio de un lugar con transito constante. Herramientas de uso comun estan accesibles y la supervision es intermitente debido a multiples frentes de coordinacion. El mobiliario no muestra fuerza bruta: las señales apuntan a manipulación rapida y localizada. La presion competitiva y la fatiga generan percepciones contradictorias; una nota intimidante aparece y complica la interpretacion. La tarea es cruzar testimonios con evidencia física para distinguir accidente de intervencion intencional y reconstruir la secuencia real.',
     objectives: ['Identificar posibles sabotajes', 'Contrastar testimonios con evidencias', 'Reconstruir la secuencia de eventos'],
     characters: [
       {
         name: 'Profesora y coordinadora del evento', image: 'assets/case3/characters/1.png',
         personality: 'Organizada y capaz de realizar multitarea; delega y confia en los reportes que le entregan, prioriza tiempos y efectividad.',
-        testimony: 'Hice rondas entre stands para confirmar senalettica y seguridad. Habia recordado que tenian que colocar un cartel que diga no tocar cableado energizado y que las herramientas comunes se devolvieran a la mesa central. En el tramo en que coordine el evento principal en el escenario, el pasillo se lleno de gente y quede sin linea de vista directa del proyecto afectado.',
+        testimony: 'Hice rondas entre stands para confirmar señalética y seguridad. Habia recordado que tenian que colocar un cartel que diga no tocar cableado energizado y que las herramientas comunes se devolvieran a la mesa central. En el tramo en que coordine el evento principal en el escenario, el pasillo se lleno de gente y quede sin linea de vista directa del proyecto afectado.',
         truth: true,
         suspicionLevel: 'low'
       },
       {
         name: 'Estudiante Palacios', image: 'assets/case3/characters/2.png',
-        personality: 'Entusiasta, detallista en lo visual; suele dispersarse afinando estetica de ultimo minuto.',
+        personality: 'Entusiasta, detallista en lo visual; suele dispersarse afinando estetica de último minuto.',
         testimony: 'Sali a buscar cartulina y cinta doble faz para el panel frontal. Cuando volvi, el equipo no encendia y el cartel estaba algo torcido, como si lo hubieran movido a la rapida. Note la regleta con el boton en reset, pero pense que alguien la toco sin querer.',
         truth: true,
         suspicionLevel: 'medium'
@@ -236,8 +236,8 @@ const cases = [
       {
         name: 'Profesor Ayudante', image: 'assets/case3/characters/4.png',
         personality: 'Bien intencionado, ansioso por optimizar orden y seguridad; interviene si ve algo fuera de lugar.',
-        testimony: 'Revise cables; estaban correctos.',
-        truth: true,
+        testimony: 'Revisé cables de forma general, pero no me acerqué a la regleta del stand afectado.',
+        truth: false,
         suspicionLevel: 'medium'
       },
       {
@@ -286,9 +286,9 @@ const cases = [
           { event: "Reacomoda discretamente la ruta del cable por detras del panel.", clueHint: "Ruta del cable reacomodada por detras del panel, diferente al trazado inicial de la manana." },
           { event: "Corta con cuter el cable de alimentacion (corte limpio) y manipula un conector secundario que luego mostrara plastico derretido.", clueHint: "Cable de alimentacion del equipo con corte limpio y biselado (sin hilos deshilachados)." },
           { event: "Coloca cinta aislante recortada de forma irregular para disimular la intervencion.", clueHint: "Restos de cinta aislante negra recortada de forma irregular, superpuesta sobre el cableado." },
-          { event: "Deja una nota intimidante para orientar la atencion hacia la rivalidad.", clueHint: "Nota intimidante en papel: no ganaran colocada sobre el faldon del stand." },
+          { event: "Deja una nota intimidante para orientar la atención hacia la rivalidad.", clueHint: "Nota intimidante en papel: no ganaran colocada sobre el faldon del stand." },
           { event: "Al energizar nuevamente y con el movimiento del pasillo, se produce el fallo subito; la regleta queda en reset y se percibe olor a plastico caliente.", clueHint: "Regleta con interruptor en reset y luz indicadora parpadeante tras el incidente." },
-          { event: "El equipo no enciende; se detectan las anomalias de cableado y los indicios fisicos.", clueHint: "Residuo de plastico derretido en un conector secundario del modulo (decoloracion localizada)." }
+          { event: "El equipo no enciende; se detectan las anomalías de cableado y los indicios fisicos.", clueHint: "Residuo de plastico derretido en un conector secundario del modulo (decoloracion localizada)." }
         ],
         consequence: 'assets/case3/conclusion/1.png'
       }
@@ -296,9 +296,9 @@ const cases = [
     debriefQuestions: [
       "Selecciona cuatro pistas que, conectadas, muestran intervencion intencional sobre el sistema electrico (no accidente).",
       "Elige dos pistas de ruido y justifica por que no sostienen la cadena causal del dano.",
-      "Vincula un testimonio con una pista fisica que lo refuerza o lo contradice (cita ambos con precision).",
-      "Indica el momento mas probable de intervencion, usando la logica de dependencia entre: ruta del cable reacomodada, corte limpio y residuo de plastico derretido.",
-      "Explica como la cinta aislante recortada irregularmente se relaciona con el intento de camuflar la manipulacion."
+      "Vincula un testimonio con una pista física que lo refuerza o lo contradice (cita ambos con precision).",
+      "Indica el momento mas probable de intervencion, usando la lógica de dependencia entre: ruta del cable reacomodada, corte limpio y residuo de plastico derretido.",
+      "Explica como la cinta aislante recortada irregularmente se relaciona con el intento de camuflar la manipulación."
     ]
   },
 
@@ -306,11 +306,11 @@ const cases = [
     id: 4,
     difficulty: 'Alto',
     title: 'Acto vandalico en la biblioteca',
-    description: 'La biblioteca aparece desordenada con danos focalizados en ciertos libreros, los mas cercanos a la entrada. Hay olor reciente a pintura, restos de pegamento y un mensaje provocador que critica la "aburrida" seleccion de titulos. La bibliotecaria mantiene una rutina breve de cafe en la tarde; algunos estudiantes colaboran con el orden y carteleria; el conserje pasa por el pasillo para retirar basura.',
+    description: 'La biblioteca aparece desordenada con daños focalizados en ciertos libreros, los mas cercanos a la entrada. Hay olor reciente a pintura, restos de pegamento y un mensaje provocador que critica la "aburrida" seleccion de titulos. La bibliotecaria mantiene una rutina breve de cafe en la tarde; algunos estudiantes colaboran con el orden y carteleria; el conserje pasa por el pasillo para retirar basura.',
     objectives: [
       'Analizar rasgos de personalidad y su relacion con los testimonios',
       'Distinguir evidencia relevante de ruido contextual',
-      'Construir una cronologia logica del hecho',
+      'Construir una cronología lógica del hecho',
       'Evaluar la credibilidad de cada testimonio segun consistencia y soporte material'
     ],
     characters: [
@@ -326,7 +326,7 @@ const cases = [
         name: 'Estudiante Silva',
         image: 'assets/case4/characters/silva.png',
         personality: 'Colaboradora frecuente de la biblioteca, metodica; orgullosa del espacio, prioriza que los libros esten ordenados por autor y etiqueta.',
-        testimony: 'Me quede ordenando con permiso de la bibliotecaria. Estaba acomodando libros por autor y rectificando etiquetas. No provoque el desorden, me llamaron por telefono y tuve que salir; regrese minutos despues que la bibliotecaria, ya habia libros en el suelo y vi una nota en la mesa. No use pegamento.',
+        testimony: 'Me quede ordenando con permiso de la bibliotecaria. Estaba acomodando libros por autor y rectificando etiquetas. No provoque el desorden, me llamaron por telefono y tuve que salir; regrese minutos después que la bibliotecaria, ya habia libros en el suelo y vi una nota en la mesa. No use pegamento.',
         truth: true,
         suspicionLevel: 'medium'
       },
@@ -342,8 +342,8 @@ const cases = [
         name: 'Conserje',
         image: 'assets/case4/characters/Conserje.png',
         personality: 'Practico, atento a detalles de limpieza; repara elementos de la escuela y realiza mantenimiento del mobiliario.',
-        testimony: 'En mi ronda escuche risas y golpes desde la biblioteca. Al pasar por la puerta, note huellas de barro hacia la salida principal. No vi quien salio, pero el rastro parecia hecho con prisa.',
-        truth: true,
+        testimony: 'En mi ronda escuché risas y golpes desde la biblioteca. Vi huellas de barro hacia la salida principal, aunque después dudé si ese rastro venía realmente desde el interior.',
+        truth: false,
         suspicionLevel: 'low'
       },
       {
@@ -399,8 +399,8 @@ const cases = [
     },
     debriefQuestions: [
       "Que fue lo mas dificil de determinar? Cita las pistas que te hicieron dudar.",
-      "Que testimonio levanto tus sospechas primero y cual te parecio mas confiable? Relacionalos con dos evidencias fisicas.",
-      "Que pista cambio tu hipotesis inicial y por que?",
+      "Que testimonio levanto tus sospechas primero y cual te parecio mas confiable? Relacionalos con dos evidencias físicas.",
+      "Que pista cambio tu hipótesis inicial y por que?",
       "Resume en tres pasos la cadena minima que explica el dano usando solo pistas del caso.",
       "Si pudieras realizar una unica verificacion adicional, cual elegirias y que esperas confirmar?"
     ]
@@ -414,7 +414,7 @@ const cases = [
     objectives: [
       "Investigar accesos y rastro de distribucion de la prueba",
       "Distinguir evidencia relevante de ruido contextual",
-      "Reconstruir una cronologia logica sin horas explicitas",
+      "Reconstruir una cronología lógica sin horas explicitas",
       "Evaluar motivos y credibilidad segun consistencia con las pistas"
     ],
     characters: [
@@ -427,7 +427,7 @@ const cases = [
       },
       {
         name: 'Estudiante Lopez', image: 'assets/case5/characters/2.png',
-        personality: 'Metodica; suele tener un discurso en donde menciona rechazar practicas de copia y reporta anomalias, es la mejor estudiante del curso.',
+        personality: 'Metodica; suele tener un discurso en donde menciona rechazar prácticas de copia y reporta anomalías, es la mejor estudiante del curso.',
         testimony: 'En la tarde me llego un whatsapp de un numero desconocido con un archivo llamado "guia" con ejercicios identicos al estilo de la profesora. Me parecio sospechoso y lo reporte de inmediato.',
         truth: true,
         suspicionLevel: 'low'
@@ -498,7 +498,7 @@ const cases = [
       }
     ],
     debriefQuestions: [
-      "Que fue lo mas dificil de determinar: el punto de acceso o la forma de distribucion? Cita las dos pistas que mas cambiaron tu hipotesis.",
+      "Que fue lo mas dificil de determinar: el punto de acceso o la forma de distribucion? Cita las dos pistas que mas cambiaron tu hipótesis.",
       "Senala un testimonio que te genero sospecha y una pista concreta que lo refuerce o lo contradiga.",
       "Elige la combinacion minima de evidencias que conecta acceso desde equipo comun con la distribucion anonima (nombralas).",
       "Que pista consideraste ruido al inicio y por que no sostiene la cadena causal?",
@@ -508,7 +508,7 @@ const cases = [
 
   {
     id: 6,
-    difficulty: 'Hardcore',
+    difficulty: 'Avanzado',
     title: 'Sabotaje en la final deportiva',
     description: 'La final del partido se juega a gimnasio lleno tras una lluvia que dejo barro en los accesos laterales. El piso de la cancha y gimnasio esta mayormente seco. El marcador electronico se ubica junto a la mesa de anotaciones y detras del banco de descanso. La custodia de las llaves del recinto cae en el representante del evento. El conserje entra y sale constantemente de la bodega ubicada cerca de las entradas laterales para intentar mantener el piso seco. Surgen tensiones por los minutos extras agregados: aparecen correcciones de los equipos de ultima hora. En ese contexto, el marcador se apaga en un punto critico del partido.',
     objectives: ['Estudiar comportamientos', 'Relacionar evidencia con motivos', 'Establecer orden de acciones'],
@@ -606,8 +606,8 @@ const cases = [
     objectives: [
       "Reconstruir movimientos en el taller a partir de indicios",
       "Evaluar la rivalidad y su relacion con la evidencia material",
-      "Separar ruido de senales con valor causal",
-      "Estimar una secuencia logica sin horas explicitas"
+      "Separar ruido de señales con valor causal",
+      "Estimar una secuencia lógica sin horas explicitas"
     ],
     characters: [
       {
@@ -640,9 +640,9 @@ const cases = [
       },
       {
         name: 'Fotografo', image: 'assets/case7/characters/foto.png',
-        personality: 'Documenta todo con rigor; cuando se concentra con audifonos, baja la atencion que presta al entorno.',
-        testimony: 'Estaba editando en el computador, casi sin levantar la vista. Tengo una toma borrosa de alguien cargando una caja rectangular, tomada desde el reflejo de un vidrio. No se distingue el rostro.',
-        truth: true,
+        personality: 'Documenta todo con rigor; cuando se concentra con audifonos, baja la atención que presta al entorno.',
+        testimony: 'Dije que no vi casi nada, pero sí tomé una foto borrosa de alguien con una caja. Afirmé que no se distinguía el rostro, aunque alcancé a notar parte del uniforme.',
+        truth: false,
         suspicionLevel: 'high'
       }
     ],
@@ -675,7 +675,7 @@ const cases = [
     variants: [
       {
         culprit: 'Estudiante Salinas',
-        motive: 'Sabotear una obra mejor valorada para reducir competencia y captar atencion.',
+        motive: 'Sabotear una obra mejor valorada para reducir competencia y captar atención.',
         method: 'Aprovecha el taller parcialmente desatendido; envuelve la escultura con cinta (queda marca de dedos con pintura verde), la coloca en una caja y la traslada por la ruta posterior del escenario. La nota agresiva remarca rivalidad y distrae la pesquisa.',
         chronology: [
           { event: "Profesor sale a bodega; fotografo editando con audifonos; Alfaro secando piezas; conserje mueve cajas hacia escenario.", clueHint: "Restos de arcilla humeda en la mesa de trabajo donde estaba la escultura (consistencia reciente)." },
@@ -701,11 +701,11 @@ const cases = [
     id: 8,
     difficulty: 'Experto',
     title: 'Sabotaje del microfono en el debate',
-    description: "Minutos antes de abrir el debate, el podio queda accesible entre pruebas y ajustes. El microfono principal del evento comparte el cableado con los microfonos auxiliares y esta asegurado con bridas plasticas. La mesa tecnica y el profesor moderador alternan su atencion entre tiempos y protocolo; equipos rivales deambulan cerca del escenario con agendas de intervencion. Circula una queja previa por volumen (mucho ruido). Antes de iniciar el debate comienza a circular entre los equipos una lista de participantes peligrosos, que sugiere preocupacion por el nivel destacado de algunos de ellos. Cuando va a iniciar el primer debate se produce un fallo en el microfono principal: la conexion aparece suelta y una brida esta cortada a medias.",
+    description: "Minutos antes de abrir el debate, el podio queda accesible entre pruebas y ajustes. El microfono principal del evento comparte el cableado con los microfonos auxiliares y esta asegurado con bridas plasticas. La mesa tecnica y el profesor moderador alternan su atención entre tiempos y protocolo; equipos rivales deambulan cerca del escenario con agendas de intervencion. Circula una queja previa por volumen (mucho ruido). Antes de iniciar el debate comienza a circular entre los equipos una lista de participantes peligrosos, que sugiere preocupacion por el nivel destacado de algunos de ellos. Cuando va a iniciar el primer debate se produce un fallo en el microfono principal: la conexion aparece suelta y una brida esta cortada a medias.",
     objectives: [
       "Examinar motivos de rivalidad y oportunidad",
       "Relacionar testimonios con evidencias tecnicas del sistema de audio",
-      "Organizar una cronologia logica del sabotaje"
+      "Organizar una cronología lógica del sabotaje"
     ],
     characters: [
       {
@@ -724,7 +724,7 @@ const cases = [
       },
       {
         name: 'Capitan de debate equipo B', image: 'assets/case8/characters/3.png',
-        personality: 'Oportunista; aprende a conocer a su enemigo para atacarlo donde mas debil lo ve. No le presta atencion a los detalles tecnicos.',
+        personality: 'Oportunista; aprende a conocer a su enemigo para atacarlo donde mas debil lo ve. No le presta atención a los detalles tecnicos.',
         testimony: 'No se ni donde van los cables. Me sente atras a revisar mis notas. No me acerque al podio.',
         truth: false,
         suspicionLevel: 'high'
@@ -738,7 +738,7 @@ const cases = [
       },
       {
         name: 'Conserje', image: 'assets/case8/characters/5.png',
-        personality: 'Orden de sillas y accesos; presta atencion a los detalles de montaje.',
+        personality: 'Orden de sillas y accesos; presta atención a los detalles de montaje.',
         testimony: 'Vi a alguien agachado junto al podio minutos antes de empezar. Escuche un clic metalico y luego se levanto rapido. No alcance a ver quien era.',
         truth: true,
         suspicionLevel: 'medium'
@@ -787,7 +787,7 @@ const cases = [
       }
     ],
     debriefQuestions: [
-      "Que fue lo mas dificil de determinar? Cita dos pistas tecnicas que cambiaron tu hipotesis.",
+      "Que fue lo mas dificil de determinar? Cita dos pistas tecnicas que cambiaron tu hipótesis.",
       "Relaciona un testimonio con una evidencia tecnica que lo refuerce o contradiga.",
       "Explica como la 'lista de participantes peligrosos' influyo tu analisis y con que pista material la conectaste.",
       "Resume en tres pasos la cadena minima que explica el fallo del microfono usando solo pistas del caso.",
@@ -797,10 +797,10 @@ const cases = [
 
   {
     id: 9,
-    difficulty: 'Hardcore',
+    difficulty: 'Avanzado',
     title: 'Hackeo del portal de calificaciones',
-    description: "Noche de cierre de notas. El laboratorio queda semivacio y el portal academico opera con accesos administrativos limitados. El Jefe de TI deja informes y auditorias listas para que las revise el encargado del siguiente turno. Antes del cierre final la jefa de UTP se percata que un grupo de alumnos que destacan por tener bajo rendimiento aparecen con notas sobresalientes y poco usuales. Investigando descubre que la profesora de ciencias confia en su entorno cercano y suele escribir sus claves de trabajo en una libreta fisica, ademas se entera que hace dias circulan correos anonimos que reclaman injusticias en las notas y, mas tarde ese dia, aparece una nota de chantaje 'Si revierten los cambios borrare todo el sistema'. En un puesto del laboratorio se encuentra un pendrive, rastros de uso reciente y una huella de sudor en el teclado.",
-    objectives: ['Analizar accesos y registros', 'Identificar habilidades tecnologicas', 'Ordenar la cronologia del hackeo'],
+    description: "Noche de cierre de notas. El laboratorio queda semivacio y el portal academico opera con accesos administrativos limitados. El Jefe de TI deja informes y auditorias listas para que las revise el encargado del siguiente turno. Antes del cierre final la jefa de UTP se percata que un grupo de alumnos que destacan por tener bajo rendimiento aparecen con notas sobresalientes y poco usuales. Investigando descubre que la profesora de ciencias confia en su entorno cercano y suele escribir sus claves de trabajo en una libreta física, ademas se entera que hace dias circulan correos anónimos que reclaman injusticias en las notas y, mas tarde ese dia, aparece una nota de chantaje 'Si revierten los cambios borrare todo el sistema'. En un puesto del laboratorio se encuentra un pendrive, rastros de uso reciente y una huella de sudor en el teclado.",
+    objectives: ['Analizar accesos y registros', 'Identificar habilidades tecnológicas', 'Ordenar la cronología del hackeo'],
     characters: [
       {
         name: 'Jefe de enlaces', image: 'assets/case9/characters/3.png',
@@ -825,7 +825,7 @@ const cases = [
       },
       {
         name: 'Profesora de ciencias', image: 'assets/case9/characters/1.png',
-        personality: 'Confia en su entorno cercano; anota todos sus recordatorios en libretas fisicas.',
+        personality: 'Confia en su entorno cercano; anota todos sus recordatorios en libretas físicas.',
         testimony: 'Revise mis clases y me retire; quiza deje algun material abierto. No uso gestores de contrasenas, a veces anoto recordatorios pero nunca los olvido en ninguna parte.',
         truth: false,
         suspicionLevel: 'medium'
@@ -869,7 +869,7 @@ const cases = [
       {
         culprit: 'Conserje Faundez',
         motive: 'El hijo del conserje esta catalogado como estudiante problematico y este intentando mejorar el rendimiento academico de su hijo procede a ocupar programas e intenta cambiar las notas desde el portal privado de la escuela.',
-        method: 'Obtiene credenciales a partir de una libreta fisica con Post-it de la profesora; ingresa en franja de baja afluencia desde un equipo del laboratorio, ejecuta programas desde un pendrive pero al no funcionar intenta hacerlo manualmente viendo un tutorial de youtube. Deja un mensaje de chantaje para evitar la reversion.',
+        method: 'Obtiene credenciales a partir de una libreta física con Post-it de la profesora; ingresa en franja de baja afluencia desde un equipo del laboratorio, ejecuta programas desde un pendrive pero al no funcionar intenta hacerlo manualmente viendo un tutorial de youtube. Deja un mensaje de chantaje para evitar la reversion.',
         chronology: [
           { event: 'Circula un correo anonimo que denuncia calificaciones "injustas" entre estudiantes y profesores.', clueHint: 'Correo anonimo reclamando calificaciones injustas enviado a varios estudiantes y profesores.' },
           { event: 'La profesora de ciencias anota contrasenas en su libreta; un Post-it arrancado de ella queda en la papelera de la sala de profesores.', clueHint: 'Se encuentra una libreta con lista de contrasenas; un borde rasgado coincide con un Post-it arrancado.' },
@@ -883,7 +883,7 @@ const cases = [
     ],
     debriefQuestions: [
       "Que te costo mas de este caso?",
-      "Que pistas cambiaron tu hipotesis inicial?",
+      "Que pistas cambiaron tu hipótesis inicial?",
       "Indica la combinacion minima de evidencias que conecta vulnerabilidad humana con ejecucion.",
       "Si pudieras pedir una verificacion adicional, cual elegirias y que esperas confirmar?"
     ]

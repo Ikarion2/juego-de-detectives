@@ -75,8 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!obj.title || typeof obj.title !== 'string') {
       errors.push('Falta "title" (string).');
     }
-    if (!obj.difficulty || !['Alto', 'Experto', 'Hardcore'].includes(obj.difficulty)) {
-      errors.push('"difficulty" debe ser "Alto", "Experto" o "Hardcore".');
+    if (!obj.difficulty || !['Alto', 'Experto', 'Avanzado'].includes(obj.difficulty)) {
+      errors.push('"difficulty" debe ser "Alto", "Experto" o "Avanzado".');
     }
     if (!obj.description) {
       errors.push('Falta "description".');

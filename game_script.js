@@ -161,11 +161,10 @@ function createCasePanel(caseData) {
   return casePanel;
 }
 
-// Crear grid de personajes (flip cards) — ordena por suspicionLevel
+// Crear grid de personajes (flip cards) — orden neutro alfabetico
 function createCharacterGrid(characters) {
-  const sortOrder = { high: 0, medium: 1, low: 2 };
   const sorted = (characters || []).slice().sort((a, b) => {
-    return (sortOrder[a.suspicionLevel] || 2) - (sortOrder[b.suspicionLevel] || 2);
+    return a.name.localeCompare(b.name, 'es');
   });
 
   const charGrid = document.createElement('div');
@@ -202,7 +201,11 @@ function createSuspectGrid(characters, onSelect) {
   grid.className = 'suspect-grid';
   let selectedName = '';
 
-  (characters || []).forEach(ch => {
+  const sorted = (characters || []).slice().sort((a, b) => {
+    return a.name.localeCompare(b.name, 'es');
+  });
+
+  sorted.forEach(ch => {
     const card = document.createElement('div');
     card.className = 'suspect-card';
     card.innerHTML = '<img src="' + ch.image + '" alt="' + ch.name + '" onerror="this.style.display=\'none\'"><span class="suspect-name">' + ch.name + '</span>';
@@ -344,7 +347,7 @@ function renderPhase1() {
   // 1. Panel del caso colapsable
   container.appendChild(createCasePanel(currentCase));
 
-  // 2. Grid de personajes (ordenados por suspicionLevel)
+  // 2. Grid de personajes (orden neutro alfabetico)
   const charTitle = document.createElement('h3');
   charTitle.textContent = 'Personajes';
   charTitle.style.marginTop = '20px';
